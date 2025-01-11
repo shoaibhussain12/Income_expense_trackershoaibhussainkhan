@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--style links-->
+    <link rel="stylesheet" href="style.css" />
+    <!--style links end-->
+    <title>Income expense tracker</title>
+  </head>
+  <body>
+    <section>
+      <!--container-->
+      <div class="container">
+        <h2>Income Expense Tracker</h2>
+        <div class="total">
+          <h4>Your Balance</h4>
+          <p>
+            <span>&#8377; </span>
+            <span id="total-ouput">0.00</span>
+          </p>
+        </div>
+        <div>
+          <div class="income">
+            <h3>Income</h3>
+            <p id="income-output">
+              <span>&#8377; </span>
+              <span id="income-output">0.00</span>
+            </p>
+          </div>
+          <div class="expense">
+            <h3>Expense</h3>
+            <p id="expense-output">
+              <span>&#8377; </span>
+              <span id="expense-output">0.00</span>
+            </p>
+          </div>
+        </div>
+
+        <!--forms-->
+        <form action="#">
+          <!--form group-->
+          <div class="form-group">
+            <label for="transaction-select">Transaction Type</label>
+            <select id="transaction-select">
+              <option value="">Select Type</option>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+
+          <!--form group-->
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" placeholder="Enter Description" id="description-input" />
+          </div>
+
+          <!--form group-->
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" placeholder="Amount" id="amount-input" />
+          </div>
+
+          <div>
+            <button id="btn-add">Add Transaction</button>
+          </div>
+        </form>
+        <!--forms end-->
+      </div>
+      <!--container end-->
+
+      <!--table-->
+      <div class="transaction-container">
+        <div id="empty"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>S.no</th>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-tbody"></tbody>
+        </table>
+      </div>
+      <!--table end-->
+    </section>
+
+    <!--model-->
+    <div id="modal">
+      <form action="#">
+        <div>
+          <h3>Edit Transaction</h3>
+          <button onclick="closeModal()">&times;</button>
+        </div>
+        <!--hidden input-->
+        <input type="hidden" id="hidden-id" />
+
+        <!--form group-->
+        <div class="form-group">
+          <label for="edit-select">Transaction Type</label>
+          <select id="edit-select">
+            <option value="">Select Type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+
+        <!--form group-->
+        <div class="form-group">
+          <label for="edit-description">Description</label>
+          <input type="text" placeholder="Enter Description" id="edit-description" />
+        </div>
+
+        <!--form group-->
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="number" placeholder="Amount" id="edit-amount" />
+        </div>
+
+        <div>
+          <button id="btn-update">Update Transaction</button>
+        </div>
+      </form>
+    </div>
+
+    <!--JS LINKS-->
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!--JS LINKS END-->
+  </body>
+</html>
